@@ -1,0 +1,20 @@
+<div class="absolute top-[2.5rem] left-0 w-full hidden lg:block -z-10">
+    <!-- Static Line -->
+    <div class="h-0.5 w-full bg-slate-200"></div>
+    <!-- Moving Ball Wrapper -->
+    <div class="absolute top-1/2 -translate-y-1/2 w-full h-4 overflow-hidden">
+        <div class="w-3 h-3 rounded-full bg-primary shadow-sm shadow-primary animate-move-horizontal absolute top-1/2 -mt-1.5"></div>
+    </div>
+</div>
+
+<style>
+    @keyframes moveHorizontal {
+        0% { left: 0; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { left: 100%; opacity: 0; }
+    }
+    .animate-move-horizontal {
+        animation: moveHorizontal 4s linear infinite;
+    }
+</style>

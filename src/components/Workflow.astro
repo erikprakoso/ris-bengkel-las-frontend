@@ -1,0 +1,153 @@
+---
+
+---
+
+<div
+    class="px-4 md:px-10 lg:px-40 py-20 flex justify-center bg-background-dark relative overflow-hidden"
+>
+    <!-- Decorative texture -->
+    <div
+        class="absolute inset-0 opacity-5 pointer-events-none"
+        style="background-image: radial-gradient(#4a5568 1px, transparent 1px); background-size: 20px 20px;"
+    >
+    </div>
+
+    <div class="flex flex-col max-w-[960px] w-full gap-12 relative z-10">
+        <div class="text-center mb-4" data-aos="fade-up">
+            <h2 class="text-slate-900 text-3xl font-bold mb-4">
+                Alur Kerja Kami
+            </h2>
+            <p class="text-slate-600">
+                Proses mudah dan transparan dari awal hingga akhir.
+            </p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative"
+        >
+            <!-- Connector Line (Desktop) -->
+            <div
+                class="hidden lg:flex absolute top-[3rem] left-[12.5%] w-[75%] h-6 z-0 items-center"
+            >
+                <div
+                    class="absolute inset-x-0 h-1 bg-slate-200 rounded-full top-1/2 -translate-y-1/2"
+                >
+                </div>
+
+                <!-- Segment 1: Card 1 (Blue) -> 2 (Orange) -->
+                <div class="flex-1 relative h-full overflow-hidden">
+                    <div
+                        class="h-1 w-32 bg-gradient-to-r from-transparent via-blue-400 to-blue-600 animate-comet absolute top-1/2 -mt-0.5 rounded-r-full shadow-[0_0_10px_rgba(37,99,235,0.5)]"
+                    >
+                    </div>
+                </div>
+
+                <!-- Segment 2: Card 2 (Orange) -> 3 (Purple) -->
+                <div class="flex-1 relative h-full overflow-hidden">
+                    <div
+                        class="h-1 w-32 bg-gradient-to-r from-transparent via-orange-400 to-orange-600 animate-comet absolute top-1/2 -mt-0.5 rounded-r-full shadow-[0_0_10px_rgba(234,88,12,0.5)]"
+                        style="animation-delay: 0.8s;"
+                    >
+                    </div>
+                </div>
+
+                <!-- Segment 3: Card 3 (Purple) -> 4 (Green) -->
+                <div class="flex-1 relative h-full overflow-hidden">
+                    <div
+                        class="h-1 w-32 bg-gradient-to-r from-transparent via-purple-400 to-purple-600 animate-comet absolute top-1/2 -mt-0.5 rounded-r-full shadow-[0_0_10px_rgba(147,51,234,0.5)]"
+                        style="animation-delay: 1.6s;"
+                    >
+                    </div>
+                </div>
+            </div>
+
+            {
+                [
+                    {
+                        step: 1,
+                        icon: "pin_drop",
+                        title: "Survey Lokasi",
+                        desc: "Tim kami datang ke lokasi Anda untuk pengukuran detail.",
+                        color: "text-blue-600",
+                        bg: "bg-gradient-to-br from-blue-50 to-blue-100",
+                        hover: "group-hover:from-blue-500 group-hover:to-blue-700",
+                    },
+                    {
+                        step: 2,
+                        icon: "request_quote",
+                        title: "Penawaran",
+                        desc: "Kami berikan rincian biaya transparan dan spesifikasi material.",
+                        color: "text-orange-600",
+                        bg: "bg-gradient-to-br from-orange-50 to-orange-100",
+                        hover: "group-hover:from-orange-500 group-hover:to-orange-700",
+                    },
+                    {
+                        step: 3,
+                        icon: "precision_manufacturing",
+                        title: "Fabrikasi",
+                        desc: "Proses pengerjaan di bengkel kami dengan kontrol kualitas ketat.",
+                        color: "text-purple-600",
+                        bg: "bg-gradient-to-br from-purple-50 to-purple-100",
+                        hover: "group-hover:from-purple-500 group-hover:to-purple-700",
+                    },
+                    {
+                        step: 4,
+                        icon: "check_circle",
+                        title: "Pemasangan",
+                        desc: "Instalasi di lokasi, finishing, dan serah terima pekerjaan.",
+                        color: "text-green-600",
+                        bg: "bg-gradient-to-br from-green-50 to-green-100",
+                        hover: "group-hover:from-green-500 group-hover:to-green-700",
+                    },
+                ].map((item, index) => (
+                    <div
+                        class="flex flex-col items-center text-center gap-4 p-4 group relative z-10"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 150}
+                    >
+                        <div
+                            class={`size-20 rounded-2xl ${item.bg} ${item.color} group-hover:bg-gradient-to-br ${item.hover} flex items-center justify-center transition-all duration-300 relative group-hover:scale-110 group-hover:text-white shadow-sm group-hover:shadow-lg`}
+                        >
+                            <span class="material-symbols-outlined text-4xl">
+                                {item.icon}
+                            </span>
+                            <span class="absolute -top-3 -right-3 bg-white border border-slate-200 text-slate-900 size-8 rounded-full flex items-center justify-center font-bold text-sm shadow-sm z-10 shadow-black/5">
+                                {item.step}
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="text-slate-900 font-bold text-lg">
+                                {item.title}
+                            </h4>
+                            <p class="text-slate-600 text-sm mt-2">
+                                {item.desc}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes comet {
+        0% {
+            left: -150px;
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+    .animate-comet {
+        animation: comet 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+</style>

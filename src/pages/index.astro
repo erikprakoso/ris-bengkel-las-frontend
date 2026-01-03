@@ -1,25 +1,36 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
+import Services from "../components/Services.astro";
+import Workflow from "../components/Workflow.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Testimonials from "../components/Testimonials.astro";
+import { FAQ } from "../components/FAQ";
+import Footer from "../components/Footer.astro";
+import FloatingWhatsApp from "../components/FloatingWhatsApp.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<Layout title="Bengkel Las Lengkap - Konstruksi Besi Profesional">
+	<Header />
+	<main>
+		<Hero />
+		<WhyChooseUs />
+		<Services />
+		<Workflow />
+		<Portfolio />
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+		<!-- Combined Testimonials & FAQ Section -->
+		<div
+			class="px-4 md:px-10 lg:px-40 pt-10 pb-20 flex justify-center bg-background-dark"
+		>
+			<div class="flex flex-col lg:flex-row max-w-[960px] w-full gap-16">
+				<Testimonials />
+				<FAQ client:visible />
+			</div>
 		</div>
-	</body>
-</html>
+	</main>
+	<Footer />
+	<FloatingWhatsApp />
+</Layout>

@@ -1,1 +1,77 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #06b6d4;
+  /* Cyan 500 */
+  --color-background-light: #ffffff;
+  /* White */
+  --color-background-dark: #F8FAFC;
+  /* Slate 50 - Light Background */
+  --color-surface: #F1F5F9;
+  /* Slate 100 - Surface */
+  --color-border: #E2E8F0;
+  /* Slate 200 - Borders */
+  --color-charcoal: #E2E8F0;
+  /* Mapping to border/light */
+  --color-steel: #4a5568;
+  --font-display: "Inter", "sans-serif";
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Base Styles from User HTML */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden;
+  }
+
+  /* Custom scrollbar to match light theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+  }
+}

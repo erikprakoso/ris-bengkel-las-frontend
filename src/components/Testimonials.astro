@@ -1,0 +1,96 @@
+---
+const testimonials = [
+    {
+        name: "Bpk. Hendra",
+        role: "Perumahan Grand City",
+        content:
+            "Pengerjaan kanopi sangat rapi, tukangnya sopan dan kerjanya cepat. Hasil lasannya halus banget, beda sama bengkel lain.",
+        stars: 5,
+    },
+    {
+        name: "Ibu Sarah",
+        role: "Cluster Harmony",
+        content:
+            "Harga sangat transparan dari awal. Pagar minimalis saya jadi tepat waktu sesuai janji. Recommended!",
+        stars: 5,
+    },
+    {
+        name: "Bpk. Wijaya",
+        role: "Ruko Modern Land",
+        content:
+            "Pesan rolling door untuk ruko, hasilnya memuaskan. Rel lancar dan tidak berisik. Mantap!",
+        stars: 5,
+    },
+    {
+        name: "Ibu Ani",
+        role: "Vila Indah",
+        content:
+            "Teralis jendelanya bagus, motifnya sesuai request. Catnya juga rapi tidak belepotan.",
+        stars: 4,
+    },
+];
+
+// Double the data for seamless loop
+const allTestimonials = [...testimonials, ...testimonials];
+---
+
+<div class="flex flex-col gap-8 flex-1" data-aos="fade-right">
+    <h2 class="text-slate-900 text-2xl font-bold">Kata Pelanggan</h2>
+
+    <!-- Marquee Container -->
+    <div
+        class="relative h-[500px] overflow-hidden flex flex-col after:absolute after:bottom-0 after:left-0 after:w-full after:h-20 after:bg-gradient-to-t after:from-background-dark after:to-transparent before:absolute before:top-0 before:left-0 before:w-full before:h-10 before:bg-gradient-to-b before:from-background-dark before:to-transparent before:z-10"
+    >
+        <div class="flex flex-col gap-4 animate-scroll-vertical hover:pause">
+            {
+                allTestimonials.map((item) => (
+                    <div class="bg-surface p-6 rounded-xl border-l-4 border-primary shrink-0">
+                        <div class="flex text-primary mb-3">
+                            {Array.from({ length: 5 }).map((_, i) => (
+                                <span
+                                    class="material-symbols-outlined text-sm"
+                                    style={
+                                        i < item.stars
+                                            ? "font-variation-settings: 'FILL' 1;"
+                                            : "font-variation-settings: 'FILL' 0;"
+                                    }
+                                >
+                                    star
+                                </span>
+                            ))}
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            "{item.content}"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="size-8 rounded-full bg-gradient-to-br from-gray-500 to-gray-700" />
+                            <div>
+                                <p class="text-slate-900 text-sm font-bold">
+                                    {item.name}
+                                </p>
+                                <p class="text-gray-500 text-xs">{item.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes scroll-vertical {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+    .animate-scroll-vertical {
+        animation: scroll-vertical 30s linear infinite;
+    }
+    .hover\:pause:hover {
+        animation-play-state: paused;
+    }
+</style>
