@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com', // TODO: Replace with actual domain
+  site: 'https://www.maspetelas.my.id',
   vite: {
     plugins: [tailwindcss()],
   },
