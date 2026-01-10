@@ -1,239 +1,323 @@
 ---
+import { Image } from "astro:assets";
 
+const projects = [
+    {
+        title: "Kanopi Industrial Cafe",
+        category: "kanopi",
+        image: "/images/kanopi-industrial-cafe.webp",
+        desc: "Instalasi kanopi baja ringan dengan gaya industrial modern untuk area outdoor cafe.",
+    },
+    {
+        title: "Pagar Minimalis",
+        category: "pagar",
+        image: "/images/pagar-minimalis.webp",
+        desc: "Desain pagar besi hollow galvanis anti-karat dengan finishing matte black.",
+    },
+    {
+        title: "Railing Tangga Melayang",
+        category: "konstruksi",
+        image: "/images/railing-tangga-melayang.webp",
+        desc: "Konstruksi tangga besi wf dengan railing minimalis modern untuk hunian mewah.",
+    },
+    {
+        title: "Folding Gate Toko",
+        category: "pagar",
+        image: "/images/folding-gate-toko.webp",
+        desc: "Pintu folding gate tebal 0.8mm dengan pengecatan powder coating tahan lama.",
+    },
+    {
+        title: "Teralis Jendela Modern",
+        category: "kanopi",
+        image: "/images/teralis-jendela-modern.webp",
+        desc: "Pengaman jendela motif laser cutting yang artistik dan kuat.",
+    },
+    {
+        title: "Mezzanine Gudang",
+        category: "konstruksi",
+        image: "/images/mezzanine-gudang.webp",
+        desc: "Struktur lantai tambahan (mezzanine) besi WF untuk optimalisasi ruang gudang.",
+    }
+];
 ---
 
-<div
-    class="px-4 md:px-10 lg:px-40 pt-20 pb-10 flex justify-center bg-background-light"
-    id="portofolio"
->
-    <div class="flex flex-col max-w-[960px] w-full gap-8">
-        <div
-            class="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-border pb-6"
-            data-aos="fade-up"
-        >
-            <div>
-                <h2 class="text-slate-900 text-3xl font-bold">Galeri Proyek</h2>
-                <p class="text-slate-600 mt-2">
-                    Hasil pengerjaan asli dari tim kami.
+<div class="py-24 bg-background-dark relative overflow-hidden" id="portofolio">
+    <!-- Fluid Background Effect -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+         <div class="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+         <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+    </div>
+
+    <div class="px-4 md:px-10 lg:px-40 flex justify-center relative z-10">
+        <div class="flex flex-col max-w-[1200px] w-full gap-16">
+            <div
+                class="flex flex-col items-center text-center gap-6"
+                data-aos="fade-up"
+            >
+                <div class="flex flex-col items-center gap-2">
+                     <span class="text-primary font-bold uppercase tracking-widest text-sm">Portofolio</span>
+                    <h2
+                        class="text-white text-4xl md:text-5xl font-heading font-black"
+                    >
+                        Hasil Karya <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Kami</span>
+                    </h2>
+                </div>
+                <p class="text-gray-400 max-w-2xl">
+                    Lihat bagaimana kami mengubah material besi menjadi konstruksi
+                    yang fungsional dan estetis.
                 </p>
-            </div>
-            <div
-                class="flex gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto"
-                id="portfolio-filters"
-            >
-                <button
-                    class="filter-btn active px-4 py-2 rounded-full bg-primary text-white text-sm font-bold whitespace-nowrap transition-colors cursor-pointer"
-                    data-filter="all">Semua</button
-                >
-                <button
-                    class="filter-btn px-4 py-2 rounded-full bg-surface text-slate-600 hover:bg-surface/80 text-sm font-medium whitespace-nowrap transition-colors cursor-pointer"
-                    data-filter="kanopi">Kanopi</button
-                >
-                <button
-                    class="filter-btn px-4 py-2 rounded-full bg-surface text-slate-600 hover:bg-surface/80 text-sm font-medium whitespace-nowrap transition-colors cursor-pointer"
-                    data-filter="pagar">Pagar</button
-                >
-                <button
-                    class="filter-btn px-4 py-2 rounded-full bg-surface text-slate-600 hover:bg-surface/80 text-sm font-medium whitespace-nowrap transition-colors cursor-pointer"
-                    data-filter="konstruksi">Konstruksi</button
-                >
-            </div>
-        </div>
 
-        <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
-            id="portfolio-grid"
-            data-aos="fade-up"
-            data-aos-delay="200"
-        >
-            <!-- Large Item -->
-            <div
-                class="portfolio-item col-span-2 row-span-2 rounded-lg overflow-hidden relative group"
-                data-category="kanopi"
-                data-layout="large"
-            >
-                <div
-                    class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-end p-6"
-                >
-                    <div
-                        class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                <!-- Filter Buttons (Script will handle logic) -->
+                <div class="flex flex-wrap justify-center gap-4" id="portfolio-filters">
+                    <button
+                        class="filter-btn active px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide transition-all duration-300 border border-transparent bg-primary text-white shadow-[0_0_15px_rgba(6,182,212,0.5)] transform hover:bg-white hover:text-primary hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+                        data-filter="all"
                     >
-                        <span
-                            class="text-primary text-xs font-bold uppercase tracking-wider"
-                            >Proyek Kanopi</span
-                        >
-                        <h4 class="text-white font-bold text-lg">
-                            Kanopi Industrial Cafe
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    data-alt="Large industrial canopy installation for a commercial cafe"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLNtmLrwyelnlzDmVN_lfhqAcLbxngqfVpiuNLFAeuL6AtSNjWphCvTTqE2-0bF6CtAhcHZqhQOzf4Gj_M08hVKcRciat4rdXRJXJCxd7LVpwgFNNoOHqbz5UjlmFEsGpBdMsUSV0GBPJ__Pxy9tWuukyD6waaBljCiaLaCfy-mM57_cWclGOzFg8dlzf_1gqF177t6aaSsfTLrK8f77avmVqG-nGfOEmGs5E_ozoTCwV-2lf9tvGxhlI4eiK-h_rnXZn6IP5D3Q");'
-                >
+                        Semua Proyek
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide transition-all duration-300 border border-white/10 bg-white/5 text-gray-400 hover:border-primary hover:text-primary hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transform hover:scale-105"
+                        data-filter="kanopi"
+                    >
+                        Kanopi
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide transition-all duration-300 border border-white/10 bg-white/5 text-gray-400 hover:border-primary hover:text-primary hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transform hover:scale-105"
+                        data-filter="pagar"
+                    >
+                        Pagar
+                    </button>
+                     <button
+                        class="filter-btn px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide transition-all duration-300 border border-white/10 bg-white/5 text-gray-400 hover:border-primary hover:text-primary hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transform hover:scale-105"
+                        data-filter="konstruksi"
+                    >
+                        Konstruksi
+                    </button>
                 </div>
             </div>
 
-            <!-- Regular Item -->
-            <div
-                class="portfolio-item col-span-1 row-span-1 rounded-lg overflow-hidden relative group"
-                data-category="pagar"
-                data-layout="regular"
-            >
-                <div
-                    class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-end p-6"
-                >
-                    <div
-                        class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    >
-                        <span
-                            class="text-primary text-xs font-bold uppercase tracking-wider"
-                            >Proyek Pagar</span
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]" id="portfolio-grid">
+                {
+                    projects.map((project, index) => {
+                         // Bento Grid Logic:
+                         // Items 0 and 3 span 2 columns on Large screens
+                         const isLarge = index === 0 || index === 3;
+                         const spanClass = isLarge ? 'lg:col-span-2' : 'lg:col-span-1';
+                         
+                        return (
+                        <div
+                            class={`group relative rounded-3xl overflow-hidden bg-charcoal-light border border-white/5 portfolio-item cursor-pointer ${spanClass} hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]`}
+                            data-category={project.category}
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
                         >
-                        <h4 class="text-white font-bold text-lg">
-                            Pagar Minimalis
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    data-alt="Detail shot of a minimalist iron fence welding joint"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLdCZ_lr4UuF9sSc6Gc8GsaJbTg8JJO5NSu_Vp85W7Qky4sSBhuH66baYB3ESc7jXUCzmBqAFEfYI8qDakMG7VHbYnQ_D2TJAc5siIrvGgTxCrpP7tJjeTIedNs6UmEZ4TqBvbzxKcHdboOYQxLyOKiqdy1HJ87Q6NPz-8xDi6Jz3qB4hccjrfyT6HhaeUTd01vgI7MvVyJTIqTH9zhf6VzIpaBsD1T_GIw5uC3AKOx1LsJSlwtbRKvGtK6iwsW_kX2kCP0TtrPg");'
-                >
-                </div>
-            </div>
-
-            <!-- Regular Item -->
-            <div
-                class="portfolio-item col-span-1 row-span-1 rounded-lg overflow-hidden relative group"
-                data-category="pagar"
-                data-layout="regular"
-            >
-                <div
-                    class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-end p-6"
-                >
-                    <div
-                        class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    >
-                        <span
-                            class="text-primary text-xs font-bold uppercase tracking-wider"
-                            >Proyek Pagar</span
-                        >
-                        <h4 class="text-white font-bold text-lg">
-                            Folding Gate
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    data-alt="Modern folding gate installation"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCW8MBZoE56vDDnulZtNSREX0yqWA5tHdcty4JxJ3HZgQNCybTHQzoq-HzJseDGfGrFkU1AqT8KNCt3kQkRe96rum4iPhdeiqUEAcFD03D9EEJQHGhT-krh0TNTQLNz2iFiamiBlcDnfwHNmn7D0i72a2VoiFBlMOhNlVtkYQZVFpOmLLex5JRQmM7xaIiYwmJBV1KLWNVs1VgLk4Z7bwC8W1YcjHUi8IpToGJn0m53E_Put9f27_9B2c1aLq7nP2RqXQ5Vge1GnA");'
-                >
-                </div>
-            </div>
-
-            <!-- Wide Item -->
-            <div
-                class="portfolio-item col-span-2 row-span-1 rounded-lg overflow-hidden relative group"
-                data-category="konstruksi"
-                data-layout="wide"
-            >
-                <div
-                    class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-end p-6"
-                >
-                    <div
-                        class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    >
-                        <span
-                            class="text-primary text-xs font-bold uppercase tracking-wider"
-                            >Proyek Tangga</span
-                        >
-                        <h4 class="text-white font-bold text-lg">
-                            Railing Tangga Melayang
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    data-alt="Floating staircase railing with black steel finish"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzuW0ZlcooiRYbbE3Qa1vVBEa-CX0JE5Nmql6TTVVHobWFQvo3Ft11FsjG-X9HKqoEBSX1mlxVZOMIC-TeILfeuZRBoUSzMOyAXjq5CFIHr-QMm565UcZOxYYqE_uv3yJICrNbhz1QtLbptrPLgAWRqStD1i5ni6ME-UtfsoD9ybeQtPKtQNeFSep2y0xOMkzIeAcj6859m0g7cPVAIfligsmJl_EYr9smvcwz_ALhL7m3lY0McDzLhXnjG5tZQOHw6gIeaZV6-A");'
-                >
-                </div>
+                            <!-- Image Container -->
+                            <div class="absolute inset-0 w-full h-full">
+                                <Image 
+                                    src={project.image} 
+                                    alt={project.title}
+                                    width={800}
+                                    height={600}
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Content Overlay -->
+                            <div class="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 z-10">
+                                <span class="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-black uppercase tracking-wider mb-3 border border-primary/20 backdrop-blur-sm shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                                    {project.category}
+                                </span>
+                                <h3 class={`text-white font-bold mb-2 group-hover:text-primary transition-colors leading-tight ${isLarge ? 'text-3xl' : 'text-2xl'}`}>
+                                    {project.title}
+                                </h3>
+                                <p class="text-gray-300 text-sm line-clamp-2 md:line-clamp-none opacity-80 group-hover:opacity-100 max-w-md">
+                                    {project.desc}
+                                </p>
+                            </div>
+                        </div>
+                    )})
+                }
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const portfolioItems = document.querySelectorAll(".portfolio-item");
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-charcoal/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        
+        <div class="relative w-full max-w-5xl max-h-[90vh] flex flex-col md:flex-row gap-8 rounded-3xl overflow-hidden bg-charcoal-light border border-white/10 shadow-2xl transform scale-95 transition-transform duration-300" id="lightbox-content">
+            <button id="lightbox-close" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-50 bg-black/20 hover:bg-black/40 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm cursor-pointer">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
 
-    // Style classes
-    const activeClasses = ["bg-primary", "text-white", "font-bold"];
-    const inactiveClasses = [
-        "bg-surface",
-        "text-slate-600",
-        "hover:bg-surface/80",
-        "font-medium",
-    ];
+            <!-- Image Section -->
+            <div class="w-full md:w-2/3 h-[400px] md:h-auto relative bg-black/50">
+                <img id="lightbox-img" src="" alt="" class="w-full h-full object-contain md:object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-50 md:hidden"></div>
+            </div>
+            
+            <!-- Content Section -->
+            <div class="w-full md:w-1/3 p-8 flex flex-col justify-center gap-6">
+                <div>
+                    <span id="lightbox-category" class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-wider mb-4 border border-primary/20">
+                        Category
+                    </span>
+                    <h3 id="lightbox-title" class="text-white text-3xl font-black leading-tight mb-4">
+                        Project Title
+                    </h3>
+                    <div class="w-20 h-1 bg-primary rounded-full mb-6"></div>
+                    <p id="lightbox-desc" class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        Description goes here.
+                    </p>
+                </div>
+                
+                <a 
+                    href="https://wa.me/6283873346839?text=Halo%2C%20saya%20tertarik%20dengan%20proyek%20ini" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary text-white font-bold uppercase tracking-wide hover:bg-white hover:text-primary transition-colors shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                >
+                    <span class="material-symbols-outlined">chat</span>
+                    Tanya Proyek Ini
+                </a>
+            </div>
+        </div>
+    </div>
 
-    function setActiveButton(clickedBtn: Element) {
-        filterBtns.forEach((btn) => {
-            btn.classList.remove(...activeClasses);
-            btn.classList.add(...inactiveClasses);
-        });
+    <script>
+        // Simple Client-side Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
 
-        clickedBtn.classList.remove(...inactiveClasses);
-        clickedBtn.classList.add(...activeClasses);
-    }
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-[0_0_15px_rgba(6,182,212,0.5)]', 'hover:bg-white', 'hover:text-primary');
+                    b.classList.add('bg-white/5', 'text-gray-400', 'border-white/10');
+                    // Add generic hover for inactive
+                    b.classList.add('hover:bg-white', 'hover:text-primary', 'hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]');
+                });
+                
+                // Add active class to clicked (Hero Style)
+                btn.classList.remove('bg-white/5', 'text-gray-400', 'border-white/10');
+                btn.classList.add('bg-primary', 'text-white', 'shadow-[0_0_15px_rgba(6,182,212,0.5)]');
+                // Ensure it has the invert hover
+                btn.classList.add('hover:bg-white', 'hover:text-primary');
 
-    // Helper to reset layout classes for 'all'
-    function resetLayout(item: Element) {
-        const layout = item.getAttribute("data-layout");
-        item.classList.remove(
-            "col-span-1",
-            "row-span-1",
-            "md:col-span-1",
-            "md:row-span-1",
-        );
+                const filter = btn.getAttribute('data-filter');
 
-        if (layout === "large") {
-            item.classList.add("col-span-2", "row-span-2");
-        } else if (layout === "wide") {
-            item.classList.add("col-span-2", "row-span-1");
-        } else {
-            item.classList.add("col-span-1", "row-span-1");
-        }
-    }
-
-    // Helper to standardize layout for filtered view (REMOVED - User wants original sizes)
-    // function standardizeLayout(item: Element) { ... }
-
-    if (filterBtns.length > 0) {
-        // Set initial active state
-        setActiveButton(filterBtns[0]);
-
-        filterBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                setActiveButton(btn);
-
-                const filterValue = btn.getAttribute("data-filter");
-
-                portfolioItems.forEach((item) => {
-                    const itemCategory = item.getAttribute("data-category");
-
-                    if (filterValue === "all" || filterValue === itemCategory) {
-                        item.classList.remove("hidden");
-                        item.classList.add("animate-fade-in");
-                        // Always restore original layout size (Large remains Large)
-                        resetLayout(item);
+                items.forEach((item) => {
+                    const category = item.getAttribute('data-category');
+                    const element = item as HTMLElement;
+                   
+                    if (filter === 'all' || filter === category) {
+                        element.style.display = 'block';
+                        element.classList.add('animate-fade-in');
                     } else {
-                        item.classList.add("hidden");
-                        item.classList.remove("animate-fade-in");
+                        element.style.display = 'none';
+                        element.classList.remove('animate-fade-in');
                     }
                 });
             });
         });
-    }
-</script>
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const closeBtn = document.getElementById('lightbox-close');
+        
+        const lbImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        const lbTitle = document.getElementById('lightbox-title');
+        const lbDesc = document.getElementById('lightbox-desc');
+        const lbCategory = document.getElementById('lightbox-category');
+
+        function openLightbox(projectData: any) {
+            if (!lightbox) return;
+
+            // Set content
+            if(lbImg) lbImg.src = projectData.image;
+            if(lbTitle) lbTitle.textContent = projectData.title;
+            if(lbDesc) lbDesc.textContent = projectData.desc;
+            if(lbCategory) lbCategory.textContent = projectData.category;
+
+            // Show
+            lightbox.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxContent?.classList.remove('scale-95');
+                lightboxContent?.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+
+            lightbox.classList.add('opacity-0');
+            lightboxContent?.classList.add('scale-95');
+            lightboxContent?.classList.remove('scale-100');
+
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+
+        // Attach Click to Items
+        // We need to pass the project data to the JS environment. 
+        // Parsing from DOM elements is easier here.
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Find image url from img tag
+                const imgEl = item.querySelector('img');
+                const titleEl = item.querySelector('h3');
+                const descEl = item.querySelector('p');
+                const catEl = item.querySelector('span'); // The category pill
+
+                const imageUrl = imgEl ? imgEl.src : '';
+
+                const data = {
+                    image: imageUrl,
+                    title: titleEl?.textContent || '',
+                    desc: descEl?.textContent || '',
+                    category: catEl?.textContent || ''
+                };
+
+                openLightbox(data);
+            });
+        });
+
+        closeBtn?.addEventListener('click', closeLightbox);
+
+        // Close on click outside
+        lightbox?.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Portfolio Mas Pete Las",
+        "description": "Koleksi hasil karya konstruksi besi dan baja ringan oleh Mas Pete Las.",
+        "itemListElement": projects.map((project, index) => ({
+            "@type": "CreativeWork",
+            "position": index + 1,
+            "name": project.title,
+            "description": project.desc,
+            "image": project.image,
+            "genre": project.category
+        }))
+    })} />
+</div>

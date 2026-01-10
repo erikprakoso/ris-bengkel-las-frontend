@@ -2,68 +2,162 @@
 
 ---
 
-<div
-    class="px-4 md:px-10 lg:px-40 py-20 flex justify-center bg-background-dark"
-    id="keunggulan"
->
-    <div class="flex flex-col max-w-[960px] w-full gap-12">
-        <div
-            class="flex flex-col gap-2 text-center md:text-left"
-            data-aos="fade-up"
-        >
-            <h2 class="text-slate-900 text-3xl font-bold tracking-tight">
-                Mengapa Memilih Kami?
-            </h2>
-            <p class="text-slate-600">
-                Komitmen kami terhadap kualitas dan kepuasan pelanggan.
-            </p>
-        </div>
+<div class="py-24 bg-charcoal relative overflow-hidden" id="keunggulan">
+    <!-- Background Map/Globe Effect -->
+    <div
+        class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center mix-blend-overlay"
+    >
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {
-                [
-                    {
-                        icon: "verified_user",
-                        title: "Material SNI",
-                        desc: "Kami hanya menggunakan besi dan baja berstandar SNI untuk menjamin kekuatan struktur.",
-                    },
-                    {
-                        icon: "security",
-                        title: "Garansi 1 Tahun",
-                        desc: "Jaminan kualitas las dan konstruksi. Jika ada kerusakan, kami perbaiki gratis.",
-                    },
-                    {
-                        icon: "engineering",
-                        title: "Tukang Berpengalaman",
-                        desc: "Dikerjakan oleh tenaga ahli dengan pengalaman lebih dari 10 tahun di bidang las.",
-                    },
-                    {
-                        icon: "payments",
-                        title: "Harga Transparan",
-                        desc: "Rincian biaya jelas di awal. Tidak ada biaya tersembunyi saat pengerjaan.",
-                    },
-                ].map((item, index) => (
-                    <div
-                        class="flex flex-col gap-4 p-6 rounded-xl bg-surface border border-border hover:border-primary/50 transition-colors group cursor-default hover:-translate-y-1 duration-300"
-                        data-aos="fade-up"
-                        data-aos-delay={index * 100}
+    <div class="px-4 md:px-10 lg:px-40 flex justify-center relative z-10">
+        <div class="flex flex-col max-w-[1200px] w-full gap-16">
+            <div
+                class="flex flex-col items-center text-center gap-4"
+                data-aos="fade-up"
+            >
+                <div
+                    class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 border border-white/10 backdrop-blur-sm"
+                >
+                    <span
+                        class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"
+                    ></span>
+                    <span
+                        class="text-gray-400 text-xs font-bold uppercase tracking-widest"
+                        >Kenapa Memilih Kami?</span
                     >
-                        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                            <span class="material-symbols-outlined text-3xl">
-                                {item.icon}
-                            </span>
+                </div>
+                <h2
+                    class="text-white text-3xl md:text-5xl font-heading font-black"
+                >
+                    Standar Industri <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+                        >Profesional</span
+                    >
+                </h2>
+                <p class="text-gray-400 max-w-2xl">
+                    Kami tidak hanya sekedar mengelas, tapi memberikan solusi
+                    konstruksi yang aman, estetis, dan tahan lama untuk properti
+                    Anda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Point 1 -->
+                <div
+                    class="flex flex-col items-center text-center gap-4 group"
+                    data-aos="fade-up"
+                    data-aos-delay="0"
+                >
+                    <div
+                        class="size-20 rounded-2xl bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 flex items-center justify-center relative group-hover:-translate-y-2 transition-transform duration-300 shadow-xl"
+                    >
+                        <div
+                            class="absolute inset-0 bg-primary/20 blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full"
+                        >
                         </div>
-                        <div>
-                            <h3 class="text-slate-900 text-lg font-bold mb-2">
-                                {item.title}
-                            </h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                {item.desc}
-                            </p>
-                        </div>
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary relative z-10"
+                            >verified</span
+                        >
                     </div>
-                ))
-            }
+                    <div>
+                        <h3 class="text-white text-lg font-bold mb-2">
+                            Material SNI
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Hanya menggunakan besi & baja bersertifikat SNI yang
+                            terjamin kekuatannya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Point 2 -->
+                <div
+                    class="flex flex-col items-center text-center gap-4 group"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <div
+                        class="size-20 rounded-2xl bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 flex items-center justify-center relative group-hover:-translate-y-2 transition-transform duration-300 shadow-xl"
+                    >
+                        <div
+                            class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                        >
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary relative z-10"
+                            >workspace_premium</span
+                        >
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold mb-2">
+                            Garansi 6 Bulan
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Jaminan perbaikan gratis jika ada kerusakan pada
+                            hasil pengelasan kami.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Point 3 -->
+                <div
+                    class="flex flex-col items-center text-center gap-4 group"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="size-20 rounded-2xl bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 flex items-center justify-center relative group-hover:-translate-y-2 transition-transform duration-300 shadow-xl"
+                    >
+                        <div
+                            class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                        >
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary relative z-10"
+                            >engineering</span
+                        >
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold mb-2">
+                            20+ Tahun Pengalaman
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Dikerjakan oleh tenaga ahli yang telah mengerjakan
+                            ratusan proyek konstruksi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Point 4 -->
+                <div
+                    class="flex flex-col items-center text-center gap-4 group"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="size-20 rounded-2xl bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 flex items-center justify-center relative group-hover:-translate-y-2 transition-transform duration-300 shadow-xl"
+                    >
+                        <div
+                            class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                        >
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary relative z-10"
+                            >payments</span
+                        >
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold mb-2">
+                            Harga Transparan
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Rincian biaya jelas di awal. Tanpa biaya
+                            tersembunyi. Survey & Konsultasi Gratis.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

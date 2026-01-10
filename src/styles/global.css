@@ -1,20 +1,45 @@
 @import "tailwindcss";
 
 @theme {
+  /* Electric Blue / Welding Arc Palette */
   --color-primary: #06b6d4;
-  /* Cyan 500 */
-  --color-background-light: #ffffff;
-  /* White */
-  --color-background-dark: #F8FAFC;
-  /* Slate 50 - Light Background */
-  --color-surface: #F1F5F9;
-  /* Slate 100 - Surface */
-  --color-border: #E2E8F0;
-  /* Slate 200 - Borders */
-  --color-charcoal: #E2E8F0;
-  /* Mapping to border/light */
-  --color-steel: #4a5568;
-  --font-display: "Inter", "sans-serif";
+  /* Cyan 500 - Electric Spark */
+  --color-primary-dark: #0891b2;
+  /* Cyan 600 - Deep Arc */
+  --color-accent: #3b82f6;
+  /* Blue 500 - Secondary Glow */
+
+  --color-charcoal: #0f172a;
+  /* Slate 900 - Cool Dark */
+  --color-charcoal-light: #1e293b;
+  /* Slate 800 - Lighter Cool Dark */
+  --color-charcoal-dark: #020617;
+  /* Slate 950 - Deepest Dark */
+
+  --color-steel: #94a3b8;
+  /* Slate 400 - Metallic Text */
+  --color-steel-light: #cbd5e1;
+  /* Slate 300 */
+  --color-steel-dark: #334155;
+  /* Slate 700 */
+
+  --color-background-light: #f8fafc;
+  /* Slate 50 */
+  --color-background-dark: #020617;
+  /* Slate 950 */
+
+  --color-surface: #ffffff;
+  --color-surface-dark: #1e293b;
+
+  --color-text-main: #f8fafc;
+  /* Light text by default on dark */
+  --color-text-muted: #94a3b8;
+  --color-text-light: #f1f5f9;
+  --color-text-dark: #0f172a;
+  /* For light sections if any */
+
+  --font-heading: "Montserrat", "sans-serif";
+  --font-body: "Roboto", "sans-serif";
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -47,31 +72,41 @@
   }
 }
 
-/* Base Styles from User HTML */
+/* Base Styles */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden;
+    @apply bg-background-light font-body text-text-main overflow-x-hidden;
+    /* dark:bg-background-dark dark:text-text-light */
   }
 
-  /* Custom scrollbar to match light theme */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #F1F5F9;
+    background: #EDF2F7;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    @apply bg-steel;
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #06b6d4;
+    @apply bg-primary;
   }
 }

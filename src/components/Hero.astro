@@ -3,48 +3,59 @@
 ---
 
 <div
-    class="relative flex min-h-[600px] flex-col justify-center overflow-hidden"
+    class="relative flex min-h-[700px] flex-col justify-center overflow-hidden bg-charcoal"
 >
-    <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
         <div
-            class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"
+            class="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/40 to-transparent z-10"
         >
         </div>
         <div
-            class="w-full h-full bg-cover bg-center bg-no-repeat animate-slow-zoom"
-            style='background-image: url("/hero-bg.webp");'
+            class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10"
+        >
+        </div>
+        <img
+            src="/images/pete-las.webp"
+            alt="Bengkel Las Mas Pete Las - Jasa Konstruksi Besi Profesional"
+            class="absolute inset-0 w-full h-full object-cover object-center animate-slow-zoom opacity-100 z-0"
+        />
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent z-10"
         >
         </div>
     </div>
 
     <div class="relative z-20 px-4 md:px-10 lg:px-40 py-20 flex justify-center">
-        <div class="flex flex-col max-w-[960px] w-full items-start gap-8">
-            <div class="flex flex-col gap-4 max-w-[640px]" data-aos="fade-up">
+        <div class="flex flex-col max-w-[1200px] w-full items-start gap-10">
+            <div class="flex flex-col gap-6 max-w-[800px]" data-aos="fade-up">
                 <div
-                    class="inline-flex items-center gap-2 rounded-full bg-primary/20 px-3 py-1 text-primary w-fit border border-primary/30 backdrop-blur-sm"
+                    class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary w-fit border border-primary/30 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.3)]"
                 >
-                    <span class="material-symbols-outlined text-sm"
-                        >verified</span
+                    <span class="material-symbols-outlined text-base"
+                        >engineering</span
                     >
-                    <span class="text-xs font-bold uppercase tracking-wide"
+                    <span class="text-xs font-black uppercase tracking-widest"
                         >Spesialis Konstruksi Baja & Besi</span
                     >
                 </div>
                 <h1
-                    class="text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] text-balance"
+                    class="text-white text-5xl md:text-7xl font-heading font-black leading-tight tracking-tight text-balance drop-shadow-lg"
                 >
-                    Konstruksi Besi <span class="text-primary">Kokoh</span> untuk
-                    Hunian Impian Anda
+                    Konstruksi Besi <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+                        >Kokoh</span
+                    ><br />untuk Hunian Impian Anda
                 </h1>
                 <h2
-                    class="text-gray-300 text-lg md:text-xl font-normal leading-relaxed max-w-[580px]"
+                    class="text-gray-300 text-lg md:text-xl font-body font-light leading-relaxed max-w-[600px] border-l-4 border-primary pl-6"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
-                    Gratis Survey & Konsultasi. Kami menggunakan material SNI &
-                    memberikan garansi las untuk keamanan jangka panjang
-                    keluarga Anda.
+                    Dapatkan penawaran terbaik dengan <span
+                        class="text-white font-bold"
+                        >Gratis Survey (Area Terjangkau) & Konsultasi</span
+                    >. Kami menggunakan material SNI & memberikan garansi las 1
+                    tahun untuk keamanan jangka panjang.
                 </h2>
             </div>
 
@@ -54,17 +65,18 @@
                 data-aos-delay="200"
             >
                 <a
-                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transform hover:-translate-y-1"
+                    class="flex items-center justify-center rounded-lg h-14 px-10 bg-primary text-white text-base font-black uppercase tracking-wide hover:bg-white hover:text-primary transition-all shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
                     target="_blank"
-                    href="https://wa.me/6281122312334"
+                    rel="noopener noreferrer"
+                    href="https://wa.me/6283873346839"
                 >
-                    Konsultasi Gratis Sekarang
+                    Konsultasi Gratis
                 </a>
                 <a
-                    class="flex items-center justify-center rounded-lg h-14 px-8 border border-white/20 bg-white/5 text-white backdrop-blur-sm text-base font-bold hover:bg-white/10 transition-all hover:border-white/40"
+                    class="flex items-center justify-center rounded-lg h-14 px-10 border border-white/20 hover:border-primary bg-white/5 text-white hover:text-primary backdrop-blur-sm text-base font-bold uppercase tracking-wide transition-all hover:bg-white/10"
                     href="#portofolio"
                 >
-                    Lihat Portofolio
+                    Lihat Proyek
                 </a>
             </div>
         </div>

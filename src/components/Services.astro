@@ -1,170 +1,271 @@
----
-
----
-
 <div
-    class="px-4 md:px-10 lg:px-40 py-20 flex justify-center bg-background-light"
+    class="px-4 md:px-10 lg:px-40 py-24 flex justify-center bg-background-dark relative overflow-hidden"
     id="layanan"
 >
-    <div class="flex flex-col max-w-[960px] w-full gap-12">
+    <!-- Background Elements -->
+    <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0"
+    >
         <div
-            class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] transform translate-x-1/2 -translate-y-1/2"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] transform -translate-x-1/2 translate-y-1/2"
+        >
+        </div>
+    </div>
+
+    <div class="flex flex-col max-w-[1200px] w-full gap-16 relative z-10">
+        <div
+            class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between border-b border-white/10 pb-12"
             data-aos="fade-up"
         >
-            <div class="max-w-[600px]">
-                <h2
-                    class="text-primary font-bold uppercase tracking-wider mb-2 text-sm"
-                >
-                    Layanan Kami
-                </h2>
+            <div class="max-w-[700px]">
+                <div class="flex items-center gap-2 mb-6">
+                    <span
+                        class="h-0.5 w-10 bg-primary shadow-[0_0_10px_rgba(6,182,212,0.8)]"
+                    ></span>
+                    <h2
+                        class="text-primary font-bold uppercase tracking-widest text-sm"
+                    >
+                        Layanan Kami
+                    </h2>
+                </div>
                 <h1
-                    class="text-slate-900 text-3xl md:text-4xl font-black leading-tight"
+                    class="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight"
                 >
-                    Solusi Konstruksi & Fabrikasi Logam
+                    Solusi Konstruksi & <br class="hidden md:block" />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+                        >Fabrikasi Logam</span
+                    >
                 </h1>
             </div>
-            <p class="text-slate-600 max-w-[400px] text-sm md:text-base">
-                Melayani pembuatan berbagai kebutuhan rumah dan industri dengan
-                finishing rapi dan presisi.
-            </p>
+            <div class="flex flex-col justify-end h-full pt-4 md:pt-0">
+                <p
+                    class="text-gray-400 max-w-[450px] text-base font-medium leading-relaxed border-l-2 border-primary/30 pl-6"
+                >
+                    Melayani pembuatan berbagai kebutuhan besi bangunan dan
+                    industri dengan standar <span class="text-white font-bold"
+                        >Material SNI</span
+                    > dan pengerjaan presisi.
+                </p>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Service 1 -->
             <div
-                class="group flex flex-col gap-4"
+                class="group flex flex-col bg-charcoal-light border border-white/5 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] rounded-2xl overflow-hidden relative"
                 data-aos="fade-up"
                 data-aos-delay="0"
             >
-                <div class="overflow-hidden rounded-lg aspect-video relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal-dark/90 z-10 pointer-events-none"
+                >
+                </div>
+
+                <div class="overflow-hidden aspect-[4/3] relative">
+                    <img
+                        src="/images/kanopi-premium.webp"
+                        alt="Jasa Pasang Kanopi Besi dan Bajaringan Minimalis"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                    />
                     <div
-                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"
+                        class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
                     >
-                    </div>
-                    <div
-                        class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Modern canopy with alderon roof on a minimalist house"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhpsIgv1FP0iX_JlXSGb3v522HqLTVolL7spRLUrimk8gub5O7ICns7HA8MMO-0GS4JX59jEsfxVcy-YdLgBSMrDrg91RgQxBRlalal833Kq6SLS5SFq67WkmFcDVX-v7Fii1VPR7nPLGOtIge0-4NzWPaKp9JNLe-0IhLa_fu4tmZ7xW9KO9S9_4YZIZM9N9a1vbxjQrz89klaxkUUWEGYDVwdrEqOY6XBnAEl_Zgvorb3Cr-kzEoRQuGgtiZkN6q6KQeNbkjaQ");'
-                    >
+                        <span class="material-symbols-outlined text-2xl"
+                            >roofing</span
+                        >
                     </div>
                 </div>
-                <div>
+
+                <div class="p-6 flex flex-col gap-4 relative z-20 -mt-12">
                     <h3
-                        class="text-slate-900 text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+                        class="text-white text-2xl font-black uppercase tracking-tight drop-shadow-lg group-hover:text-primary transition-colors"
                     >
                         Kanopi Premium
                     </h3>
-                    <p class="text-slate-600 text-sm mb-3">
-                        Pilihan atap Alderon, Polycarbonat, dan Spandek dengan
-                        rangka besi hollow galvanis anti karat yang tahan cuaca
-                        ekstrem.
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Perlindungan maksimal dengan rangka kokoh. Tersedia
+                        berbagai pilihan atap berkualitas tinggi.
                     </p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li class="flex items-center gap-2">
+                    <div class="w-full h-px bg-white/10 my-2"></div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Rangka Double
-                        </li>
-                        <li class="flex items-center gap-2">
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Material Atap</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Alderon, Polycarbonat</span
+                                >
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Cat Epoxy Primer
-                        </li>
-                    </ul>
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Rangka</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Hollow Galvanis 4x6 / 4x8</span
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Service 2 -->
             <div
-                class="group flex flex-col gap-4"
+                class="group flex flex-col bg-charcoal-light border border-white/5 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] rounded-2xl overflow-hidden relative"
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                <div class="overflow-hidden rounded-lg aspect-video relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal-dark/90 z-10 pointer-events-none"
+                >
+                </div>
+
+                <div class="overflow-hidden aspect-[4/3] relative">
+                    <img
+                        src="/images/pintu-sliding.webp"
+                        alt="Pembuatan Pintu Besi Sliding dan Folding Gate"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                    />
                     <div
-                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"
+                        class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
                     >
-                    </div>
-                    <div
-                        class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Black sliding metal gate with wood accents"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArPY_AKM49T3b8Iw1xFbxr-5EzSkWLCJa5zx4kbgfIX_oev-iSgM530N77-b60b74FHgq2SYW5ueQ1-42bDXiPfRF_DyKEFVkyh3PDh7pkAqtLCzFckJYUw3BkvGpEuUT1M6v7CluweNxGdTRCiAiSqUhKthLYjEySCAb4VN3krTARPb9vMF1vC2zyD1Wpq31fzTIR7beESsbyGz4WEaIQTcmg0w0umBQoyjLtswiOfJbOn9kwOPXBMVOnpE7aDiuNyM-tqW0_pg");'
-                    >
+                        <span class="material-symbols-outlined text-2xl"
+                            >door_sliding</span
+                        >
                     </div>
                 </div>
-                <div>
+                <div class="p-6 flex flex-col gap-4 relative z-20 -mt-12">
                     <h3
-                        class="text-slate-900 text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+                        class="text-white text-2xl font-black uppercase tracking-tight drop-shadow-lg group-hover:text-primary transition-colors"
                     >
-                        Pintu & Gerbang
+                        Pintu Sliding
                     </h3>
-                    <p class="text-slate-600 text-sm mb-3">
-                        Pintu sliding modern, pintu lipat (folding gate), dan
-                        pintu kasa nyamuk dengan finishing cat duco rapi dan rel
-                        lancar.
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pintu gerbang modern dengan sistem rel yang lancar dan
+                        awet. Desain custom laser cutting.
                     </p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li class="flex items-center gap-2">
+                    <div class="w-full h-px bg-white/10 my-2"></div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Rel Stainless
-                        </li>
-                        <li class="flex items-center gap-2">
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Finishing</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Cat Duco / Powder Coating</span
+                                >
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Custom Laser Cutting
-                        </li>
-                    </ul>
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Aksesoris</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Rel Stainless & Roda Heavy Duty</span
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Service 3 -->
             <div
-                class="group flex flex-col gap-4"
+                class="group flex flex-col bg-charcoal-light border border-white/5 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] rounded-2xl overflow-hidden relative"
                 data-aos="fade-up"
                 data-aos-delay="200"
             >
-                <div class="overflow-hidden rounded-lg aspect-video relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal-dark/90 z-10 pointer-events-none"
+                >
+                </div>
+
+                <div class="overflow-hidden aspect-[4/3] relative">
+                    <img
+                        src="/images/pagar-railing.webp"
+                        alt="Jasa Pembuatan Pagar Besi dan Railing Tangga"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                    />
                     <div
-                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"
+                        class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
                     >
-                    </div>
-                    <div
-                        class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Minimalist black iron fence design"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGt4dbYeDqGMSnFNrEDCHc8iU2LMQ62IEPIapIpD5FSEyWTrMZ3fUSddfbi24AHumZYXg5CbGlk3xnpU7koYGrXPT01diUE6TF_XgfBbaeGjVIaR6pnZ6KyPhw-4BpBG5bYK8gsRLU8JIvOq_exUhWS086FK9hgt78uL_-amLW4KF1oXpifCEYVG9lEE5jMk7xJqjNhUObybprnTaWXsmJGYzZeXqTgOqOyBCNql5ZqDq7la5nfRS_WX2y7gpCfKeyft1Wh090Dw");'
-                    >
+                        <span class="material-symbols-outlined text-2xl"
+                            >fence</span
+                        >
                     </div>
                 </div>
-                <div>
+                <div class="p-6 flex flex-col gap-4 relative z-20 -mt-12">
                     <h3
-                        class="text-slate-900 text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+                        class="text-white text-2xl font-black uppercase tracking-tight drop-shadow-lg group-hover:text-primary transition-colors"
                     >
                         Pagar & Railing
                     </h3>
-                    <p class="text-slate-600 text-sm mb-3">
-                        Desain pagar minimalis modern hingga tempa klasik,
-                        railing tangga, dan balkon dengan material besi solid
-                        SNI.
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Keamanan rumah dengan estetika tinggi. Pagar, teralis,
+                        railing tangga presisi tinggi.
                     </p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li class="flex items-center gap-2">
+                    <div class="w-full h-px bg-white/10 my-2"></div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Las Full (Tidak Titik)
-                        </li>
-                        <li class="flex items-center gap-2">
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Teknik Las</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Las Full - Lebih Kuat</span
+                                >
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
                             <span
-                                class="material-symbols-outlined text-primary text-base"
-                                >check</span
-                            > Anti Karat
-                        </li>
-                    </ul>
+                                class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5"
+                                >check_circle</span
+                            >
+                            <div>
+                                <span
+                                    class="block text-white font-bold text-xs uppercase tracking-wider"
+                                    >Material</span
+                                >
+                                <span class="text-gray-500 text-xs"
+                                    >Besi Nako / Hollow Tebal SNI</span
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

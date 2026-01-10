@@ -10,8 +10,8 @@ interface Props {
 
 const {
     title,
-    description = "Bengkel Las Lengkap - Konstruksi Besi Profesional untuk Hunian Impian Anda",
-    image = "/hero-bg.webp",
+    description = "Mas Pete Las Lengkap - Konstruksi Besi Profesional untuk Hunian Impian Anda",
+    image = "/images/pete-las.webp",
 } = Astro.props;
 ---
 
@@ -24,6 +24,11 @@ const {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <link
+            rel="canonical"
+            href={new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
+                .href}
+        />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
@@ -43,7 +48,7 @@ const {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
             rel="stylesheet"
         />
         <link
@@ -52,7 +57,7 @@ const {
         />
     </head>
     <body
-        class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden antialiased"
+        class="bg-background-dark text-text-main font-body overflow-x-hidden antialiased selection:bg-primary selection:text-white"
     >
         <slot />
 
