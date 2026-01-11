@@ -1,41 +1,47 @@
 ---
 import { Image } from "astro:assets";
+import kanopiCafe from "../assets/images/kanopi-industrial-cafe.webp";
+import pagarMinimalis from "../assets/images/pagar-minimalis.webp";
+import railingTangga from "../assets/images/railing-tangga-melayang.webp";
+import foldingGate from "../assets/images/folding-gate-toko.webp";
+import teralisJendela from "../assets/images/teralis-jendela-modern.webp";
+import mezzanineGudang from "../assets/images/mezzanine-gudang.webp";
 
 const projects = [
     {
         title: "Kanopi Industrial Cafe",
         category: "kanopi",
-        image: "/images/kanopi-industrial-cafe.webp",
+        image: kanopiCafe,
         desc: "Instalasi kanopi baja ringan dengan gaya industrial modern untuk area outdoor cafe.",
     },
     {
         title: "Pagar Minimalis",
         category: "pagar",
-        image: "/images/pagar-minimalis.webp",
+        image: pagarMinimalis,
         desc: "Desain pagar besi hollow galvanis anti-karat dengan finishing matte black.",
     },
     {
         title: "Railing Tangga Melayang",
         category: "konstruksi",
-        image: "/images/railing-tangga-melayang.webp",
+        image: railingTangga,
         desc: "Konstruksi tangga besi wf dengan railing minimalis modern untuk hunian mewah.",
     },
     {
         title: "Folding Gate Toko",
         category: "pagar",
-        image: "/images/folding-gate-toko.webp",
+        image: foldingGate,
         desc: "Pintu folding gate tebal 0.8mm dengan pengecatan powder coating tahan lama.",
     },
     {
         title: "Teralis Jendela Modern",
         category: "kanopi",
-        image: "/images/teralis-jendela-modern.webp",
+        image: teralisJendela,
         desc: "Pengaman jendela motif laser cutting yang artistik dan kuat.",
     },
     {
         title: "Mezzanine Gudang",
         category: "konstruksi",
-        image: "/images/mezzanine-gudang.webp",
+        image: mezzanineGudang,
         desc: "Struktur lantai tambahan (mezzanine) besi WF untuk optimalisasi ruang gudang.",
     }
 ];
@@ -316,7 +322,7 @@ const projects = [
             "position": index + 1,
             "name": project.title,
             "description": project.desc,
-            "image": project.image,
+            "image": project.image.src,
             "genre": project.category
         }))
     })} />

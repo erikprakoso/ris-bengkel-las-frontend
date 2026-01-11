@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+import kanopiImg from "../assets/images/kanopi-premium.webp";
+import pintuImg from "../assets/images/pintu-sliding.webp";
+import pagarImg from "../assets/images/pagar-railing.webp";
+---
+
 <div
     class="px-4 md:px-10 lg:px-40 py-24 flex justify-center bg-background-dark relative overflow-hidden"
     id="layanan"
@@ -67,10 +74,11 @@
                 </div>
 
                 <div class="overflow-hidden aspect-[4/3] relative">
-                    <img
-                        src="/images/kanopi-premium.webp"
+                    <Image
+                        src={kanopiImg}
                         alt="Jasa Pasang Kanopi Besi dan Bajaringan Minimalis"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        width={600}
                     />
                     <div
                         class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
@@ -139,10 +147,11 @@
                 </div>
 
                 <div class="overflow-hidden aspect-[4/3] relative">
-                    <img
-                        src="/images/pintu-sliding.webp"
+                    <Image
+                        src={pintuImg}
                         alt="Pembuatan Pintu Besi Sliding dan Folding Gate"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        width={600}
                     />
                     <div
                         class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
@@ -210,10 +219,11 @@
                 </div>
 
                 <div class="overflow-hidden aspect-[4/3] relative">
-                    <img
-                        src="/images/pagar-railing.webp"
+                    <Image
+                        src={pagarImg}
                         alt="Jasa Pembuatan Pagar Besi dan Railing Tangga"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        width={600}
                     />
                     <div
                         class="absolute top-4 right-4 z-20 bg-charcoal/80 backdrop-blur-md p-2 rounded-lg border border-white/10 text-primary"
