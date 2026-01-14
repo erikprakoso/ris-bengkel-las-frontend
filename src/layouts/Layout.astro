@@ -10,7 +10,7 @@ interface Props {
 
 const {
     title,
-    description = "Bengkel Las Mas Pete Lengkap - Konstruksi Besi Profesional untuk Hunian Impian Anda",
+    description = "Bengkel Las Mas Pete - Professional Welding Shop & Iron Construction. Jasa Konstruksi Besi Profesional untuk Hunian Impian Anda.",
     image = "/images/pete-las.jpg",
 } = Astro.props;
 ---
@@ -20,6 +20,10 @@ const {
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="bengkel las, welding shop, konstruksi besi, iron construction services, pagar, railing, canopy, kanopi, tralis, grobogan, purwodadi, central java"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
@@ -65,6 +69,7 @@ const {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "Bengkel Las Mas Pete",
+                "description": "Professional Welding Shop (Bengkel Las) in Grobogan. We provide iron construction services for gates, canopies, and railings.",
                 "image": "https://www.maspetelas.my.id/images/pete-las.jpg",
                 "@id": "https://www.maspetelas.my.id",
                 "url": "https://www.maspetelas.my.id",
