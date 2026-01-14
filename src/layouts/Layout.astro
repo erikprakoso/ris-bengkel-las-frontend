@@ -10,7 +10,7 @@ interface Props {
 
 const {
     title,
-    description = "Mas Pete Las Lengkap - Konstruksi Besi Profesional untuk Hunian Impian Anda",
+    description = "Bengkel Las Mas Pete Lengkap - Konstruksi Besi Profesional untuk Hunian Impian Anda",
     image = "/images/pete-las.jpg",
 } = Astro.props;
 ---
@@ -59,6 +59,46 @@ const {
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
         />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Bengkel Las Mas Pete",
+                "image": "https://www.maspetelas.my.id/images/pete-las.jpg",
+                "@id": "https://www.maspetelas.my.id",
+                "url": "https://www.maspetelas.my.id",
+                "telephone": "+6283873346839",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Nglawu, Tirem",
+                    "addressLocality": "Brati",
+                    "addressRegion": "Grobogan",
+                    "postalCode": "58153",
+                    "addressCountry": "ID"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -7.024476,
+                    "longitude": 110.908706
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    ],
+                    "opens": "07:30",
+                    "closes": "16:30"
+                },
+                "priceRange": "$$"
+            }
+        </script>
     </head>
     <body
         class="bg-background-dark text-text-main font-body overflow-x-hidden antialiased selection:bg-primary selection:text-white"
